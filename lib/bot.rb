@@ -4,7 +4,6 @@
 require 'telegram/bot'
 require_relative 'quote.rb'
 require_relative 'joke.rb'
-require_relative 'weather.rb'
 class Bot
   def initialize
     token = '1290989050:AAEQZjgmkj64d2voqbECWZJVIeZMP1Mpqnk'
