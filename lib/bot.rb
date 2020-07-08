@@ -12,10 +12,11 @@ class Bot
         when '/stop'
           bot.api.send_message(chat_id: message.chat.id, text: "Sorry to see you go\nBye, #{message.from.first_name}")
         when '/quote'
-        	quote = Quote.new
-        	bot.api.send_message(chat_id: message.chat.id, text: "Here is a motivational quote for you \n #{quote['text']}", date: message.date)
+          quote = Quote.new
+          final_quote = quote.choose_random
+          bot.api.send_message(chat_id: message.chat.id, text: "motivational quote :\n
+          	#{final_quote['text']} \n by #{final_quote['author']}", date: message.date)
         end
-
       end
     end
   end
