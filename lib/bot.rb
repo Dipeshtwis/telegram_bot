@@ -4,6 +4,7 @@
 require 'telegram/bot'
 require_relative 'quote.rb'
 require_relative 'joke.rb'
+require_relative 'weather.rb'
 class Bot
   def initialize
     token = '1290989050:AAEQZjgmkj64d2voqbECWZJVIeZMP1Mpqnk'
@@ -22,8 +23,11 @@ class Bot
         when '/joke'
           value = Joke.new
           final_joke = value.provide_joke
-          bot.api.send_message(chat_id: message.chat.id, text: "Funny joke : \n #{final_joke['content']}", date: message.date)
-
+          bot.api.send_message(chat_id: message.chat.id, text: "Funny joke : \n #{final_joke.read_body}", date: message.date)
+        # when '/weather'
+        #   value = Weather.new
+        #   final_weather = value.provide_weather(city)
+        #   bot.api.send_message(chat_id: message.chat.id, text: "the weather will be : #{final_weather}", date: message.date)
         else
           bot.api.send_message(chat_id: message.chat.id, text: "Sorry you put an invalid entry, #{message.from.first_name}, you need to use  /start, /stop, /quote or /joke")
         end

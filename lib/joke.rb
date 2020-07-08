@@ -1,8 +1,8 @@
 require 'telegram/bot'
 require 'net/http'
-# require 'json'
-require 'uri'
-require 'openssl'
+require 'json'
+# require 'uri'
+# require 'openssl'
 require_relative 'bot.rb'
 
 class Joke
@@ -12,6 +12,10 @@ class Joke
   end
 
   def provide_joke
+    # uri = URI('https://official-joke-api.appspot.com/random_joke')
+    # response = Net::HTTP.get(uri)
+    # response = JSON.parse(response)
+    # response
     url = URI('https://joke3.p.rapidapi.com/v1/joke')
 
     http = Net::HTTP.new(url.host, url.port)
@@ -23,6 +27,6 @@ class Joke
     request['x-rapidapi-key'] = '7e13aacda5msh5c03256bcaac2dap1a2540jsn105a8383161d'
 
     response = http.request(request)
-    puts response.read_body
+    response
   end
 end
