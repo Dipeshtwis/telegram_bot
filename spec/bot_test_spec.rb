@@ -8,7 +8,7 @@ describe Quote do
       expect(value.provide_quote.class).to eql(Array)
     end
 
-    it 'the length of the array should not be zero' do
+    it 'the length of the array should not be equal to zero' do
       expect(value.provide_quote.length).not_to eql(0)
     end
   end
@@ -20,6 +20,19 @@ describe Quote do
 
     it 'return a key-value pair' do
       expect(value.choose_random.length).to eql(2)
+    end
+  end
+end
+
+describe Joke do
+  let(:value) { Joke.new }
+  describe '#provide_joke' do
+    it 'return class string in response when send the json request' do
+      expect(value.provide_joke.read_body.class).to eql(String)
+    end
+
+    it 'the length of the string should not be equal to zero' do
+      expect(value.provide_joke.read_body.length).not_to eql(0)
     end
   end
 end

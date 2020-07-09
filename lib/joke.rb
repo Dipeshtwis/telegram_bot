@@ -1,7 +1,6 @@
 require 'telegram/bot'
 require 'net/http'
 require 'uri'
-require 'openssl'
 require_relative 'bot.rb'
 
 class Joke
