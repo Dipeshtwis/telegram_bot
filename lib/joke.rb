@@ -1,6 +1,7 @@
 require 'telegram/bot'
 require 'net/http'
 require 'uri'
+require 'json'
 require_relative 'bot.rb'
 
 class Joke
@@ -10,9 +11,6 @@ class Joke
   end
 
   def provide_joke
-    # file = File.read('jokes.json')
-    # data_hash = JSON.parse(file)
-    # data_hash
     url = URI('https://joke3.p.rapidapi.com/v1/joke')
 
     http = Net::HTTP.new(url.host, url.port)
@@ -24,6 +22,7 @@ class Joke
     request['x-rapidapi-key'] = '7e13aacda5msh5c03256bcaac2dap1a2540jsn105a8383161d'
 
     response = http.request(request)
+    response = JSON.parse(response.body)
     response
   end
 end

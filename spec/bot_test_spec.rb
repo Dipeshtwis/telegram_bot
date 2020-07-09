@@ -28,11 +28,11 @@ describe Joke do
   let(:value) { Joke.new }
   describe '#provide_joke' do
     it 'return class string in response when send the json request' do
-      expect(value.provide_joke.read_body.class).to eql(String)
+      expect(value.provide_joke.class).to eql(Hash)
     end
 
     it 'the length of the string should not be equal to zero' do
-      expect(value.provide_joke.read_body.length).not_to eql(0)
+      expect(value.provide_joke.length).not_to eql(0)
     end
   end
 end
