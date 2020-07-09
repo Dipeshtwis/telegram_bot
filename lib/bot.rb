@@ -11,8 +11,10 @@ class Bot
     Telegram::Bot::Client.run(token) do |bot|
       bot.listen do |message|
         case message.text
+        when 'hi', 'Hi', 'Hello', 'hello', '✋'
+        	bot.api.send_message(chat_id: message.chat.id, text: "Hey Crow, Welcome to Deepesh chat bot, Let me help you if you are feeling down, I am here to influence you with my word and joke. \n Use /start to start the bot, \n /quote to get a different inspirational quote everytime you feel down, \n /joke to listen something funny, and \n /stop to say bye to the bot")
         when '/start'
-          bot.api.send_message(chat_id: message.chat.id, text: "Hello, #{message.from.first_name}, Welcome to Deepesh chat bot, Let me help you if you are feeling down, I am here to influence you with my word and joke. \n Use /start to start the bot, \n /stop to say bye to the bot, \n /quote to get a different inspirational quote everytime you feel down, and \n /joke to listen something funny")
+          bot.api.send_message(chat_id: message.chat.id, text: "Hello, #{message.from.first_name}")
         when '/stop'
           bot.api.send_message(chat_id: message.chat.id, text: "Sorry to see you go\nBye, #{message.from.first_name}")
         when '/quote'
