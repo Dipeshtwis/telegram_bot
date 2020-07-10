@@ -5,7 +5,7 @@ require 'json'
 require_relative 'bot.rb'
 
 class Joke
-  attr_reader :joke
+  @joke
   def initialize
     @joke = provide_joke
   end

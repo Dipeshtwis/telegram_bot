@@ -4,7 +4,7 @@ require 'json'
 require_relative 'bot.rb'
 
 class Quote
-  attr_reader :quote
+  @quote
   def initialize
     @quote = provide_quote
   end

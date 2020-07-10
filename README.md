@@ -19,7 +19,12 @@ From your command line, first clone the project:
 # Clone this repository
 $ git clone https://github.com/Dipeshtwis/telegram_bot.git
 
-# Go into the folder Tic-tac-toe where the game is present
+# Install the required gem file
+
+$ gem install telegram-bot-ruby
+$ bundle install
+
+# Go into the folder telegram_bot
 $ cd telegram_bot
 
 # Navigate to bin folder
@@ -27,7 +32,6 @@ $ cd bin
 
 # In command prompt, run the following command
 $ ./main.rb
-
 
 
 # Go to telegram app Desktop/Mobile
@@ -50,7 +54,7 @@ From your command line, first clone the project:
 
 ```bash
 # Install the Rspec
-$ gem install Rspec
+$ gem install rspec
 
 # Initialize the Rspec
 $ rspec --init
