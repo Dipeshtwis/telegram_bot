@@ -5,7 +5,7 @@ require 'json'
 require_relative 'bot.rb'
 
 class Joke
-  @joke
+  @joke = nil
   def initialize
     @joke = provide_joke
   end
