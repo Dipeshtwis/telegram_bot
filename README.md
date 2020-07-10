@@ -27,11 +27,8 @@ $ bundle install
 # Go into the folder telegram_bot
 $ cd telegram_bot
 
-# Navigate to bin folder
-$ cd bin
-
 # In command prompt, run the following command
-$ ./main.rb
+$ ruby bin/main.rb
 
 
 # Go to telegram app Desktop/Mobile
