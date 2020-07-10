@@ -9,4 +9,3 @@ gem 'net-http-persistent'
 gem 'openssl'
 gem 'rubocop', require: false
 gem 'telegram-bot-ruby'
-gem 'uri'
